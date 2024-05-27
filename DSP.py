@@ -1,5 +1,4 @@
 import sys
-import time
 import heapq
 import math
 
@@ -37,8 +36,6 @@ def dijkstra(graph):
          return '-1\n'
     return "{:.2f}\n".format(done.get(lg))
 
-
-s = time.time()
 for line in sys.stdin:
         data = line.strip().split(",")
         locs = [(float(data[i]), float(data[i+1])) for i in range(1, len(data), 2)]
@@ -50,5 +47,3 @@ for line in sys.stdin:
             sys.stdout.write(dijkstra(locs))
         else:
             sys.stdout.write("{:.2f}\n".format(test))
-e = time.time()
-sys.stdout.write(str(e-s) + "\n")
